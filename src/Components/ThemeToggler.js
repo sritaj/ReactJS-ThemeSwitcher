@@ -1,16 +1,16 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import ThemeContext from "../Context/ThemeContext";
 
 const ThemeToggler = () => {
-  const [themeMode, setThemeMode] = useContext(ThemeToggler);
+  const [themeMode, setThemeMode] = useContext(ThemeContext);
 
   return (
     <div
       onClick={() => {
-        setThemeMode = themeMode === "light" ? "dark" : "light";
+        setThemeMode(themeMode === "light" ? "dark" : "light");
       }}
     >
-      <p>{themeMode === "light" ? "Lights Off" : "Lights On"}</p>
+      <span>{themeMode === "light" ? "Turn Off" : "Lights On"}</span>
     </div>
   );
 };

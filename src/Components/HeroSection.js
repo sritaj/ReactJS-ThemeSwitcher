@@ -1,22 +1,21 @@
 import React, { useContext } from "react";
 import ThemeContext from "../Context/ThemeContext";
 import AppTheme from "../Colors";
-import ThemeToggler from "./ThemeToggler";
 
 const HeroSection = () => {
-  const theme = useContext(ThemeToggler)[0];
-  const currentTheme = AppTheme[theme];
+  const theme = useContext(ThemeContext)[0];
+  const currectTheme = AppTheme[theme];
 
   return (
     <div
       style={{
         padding: "1rem",
-        backgroundColor: `${currentTheme.backgroundColor}`,
-        color: `${currentTheme.textColor}`,
+        backgroundColor: `${currectTheme.backgroundColor}`,
+        color: `${currectTheme.textColor}`,
         textAlign: "center",
       }}
     >
-      <h1>Context API Theme Toggler</h1>
+      <h1>Context API theme toggler</h1>
       <p>This is a nice paragraph</p>
       <button
         style={{
@@ -24,9 +23,11 @@ const HeroSection = () => {
           padding: "10px 150px",
           fontSize: "20px",
           color: "#FFF",
-          border: `${currentTheme.border}`,
+          border: `${currectTheme.border}`,
         }}
-      ></button>
+      >
+        CLick Me
+      </button>
     </div>
   );
 };
